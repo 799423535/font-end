@@ -4,10 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-// var indexRouter = require('./routes/index');
+//路由
 var introduce = require('./routes/introduces');
 var interests = require('./routes/interests');
 var tickets = require('./routes/tickets');
+var users = require('./routes/users');
 
 
 //创建连接
@@ -41,6 +42,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/introduce', introduce);
 app.use('/interests', interests);
 app.use('/tickets', tickets);
+app.use('/users', users);
 
 //功能------------------------
 

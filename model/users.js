@@ -14,6 +14,6 @@ const studentsSchema = new mongoose.Schema({
  * 第一个产生为数据库的集合，第二个为骨架
  * 
  */
-const tickets = mongoose.model('tickets', studentsSchema);
+const Users = mongoose.model('users', studentsSchema);
 
-module.exports = tickets;
+module.exports = Users;
