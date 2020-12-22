@@ -3,6 +3,7 @@ const Tickets = require('../model/tickets');
 var router = express.Router();
 /* 获取所有的tickets */
 router.get('/getTickets', function (req, res, next) {
+    console.log(111);
     Tickets.find({}, function (err, results) {
         res.json({
             status: 0,
