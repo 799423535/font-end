@@ -18,7 +18,7 @@ router.post('/login', function (req, res, next) {
         }
     });
 });
-//添加学生
+//添加用户
 router.post('/addUser', function (req, res, next) {
     var fluffy = new Users(req.body);
     fluffy.save(function (err, fluffy) {
@@ -29,7 +29,7 @@ router.post('/addUser', function (req, res, next) {
         });
     });
 });
-
+//用户详情
 router.post('/findUser', function (req, res, next) {
     Users.find({ _id: req.body._id }, function (err, results) {
         if (results.length > 0) {
