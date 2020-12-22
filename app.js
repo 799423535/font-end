@@ -3,12 +3,24 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+var mongoose = require('mongoose');
 // var indexRouter = require('./routes/index');
 // var usersRouter = require('./routes/users');
 
-var app = express();
 
+//创建连接
+mongoose.connect('mongodb://150.158.7.205:27017/vue3', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+var db = mongoose.connection;//连接数据库
+//如果失败
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function () {//第一次连接成功
+  console.log('连接成功');
+});
+
+var app = express();
 
 
 
