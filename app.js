@@ -4,7 +4,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
+<<<<<<< HEAD
 var cors = require('cors')
+=======
+var cors=require('cors');
+
+>>>>>>> zqq
 //路由
 var introduce = require('./routes/introduces');
 var interests = require('./routes/interests');
@@ -25,7 +30,7 @@ db.once('open', function () {//第一次连接成功
 });
 
 var app = express();
-
+app.use(cors);
 
 
 // view engine setup
