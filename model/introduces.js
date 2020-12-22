@@ -17,6 +17,6 @@ const studentsSchema = new mongoose.Schema({
  * 第一个产生为数据库的集合，第二个为骨架
  * 
  */
-const introduce = mongoose.model('introduce', studentsSchema);
+const introduce = mongoose.model('introduces', studentsSchema);
 
 module.exports=introduce;

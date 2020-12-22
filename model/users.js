@@ -6,7 +6,7 @@ const studentsSchema = new mongoose.Schema({
     img: String,
     attention: Number,
     fans: Number,
-    jifen: 0,
+    jifen: Number,
     details: Array
 });
 //创建模型 

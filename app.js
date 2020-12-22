@@ -5,7 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
 // var indexRouter = require('./routes/index');
-// var usersRouter = require('./routes/users');
+var introduce = require('./routes/introduces');
+var interests = require('./routes/interests');
+var tickets = require('./routes/tickets');
 
 
 //创建连接
@@ -34,9 +36,13 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//功能------------------------
 
-// app.use('/', indexRouter);
-// app.use('/users', usersRouter);
+app.use('/introduce', introduce);
+app.use('/interests', interests);
+app.use('/tickets', tickets);
+
+//功能------------------------
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

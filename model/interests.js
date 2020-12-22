@@ -11,6 +11,6 @@ const studentsSchema = new mongoose.Schema({
  * 第一个产生为数据库的集合，第二个为骨架
  * 
  */
-const interest = mongoose.model('interest', studentsSchema);
+const interest = mongoose.model('interests', studentsSchema);
 
 module.exports=interest;
