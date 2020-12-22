@@ -4,12 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mongoose = require('mongoose');
-<<<<<<< HEAD
-var cors = require('cors')
-=======
-var cors=require('cors');
 
->>>>>>> zqq
+var cors = require('cors')
 //路由
 var introduce = require('./routes/introduces');
 var interests = require('./routes/interests');
