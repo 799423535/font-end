@@ -26,7 +26,6 @@ db.once('open', function () {//第一次连接成功
 });
 
 var app = express();
-app.use(cors);
 
 
 // view engine setup

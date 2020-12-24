@@ -20,13 +20,23 @@ router.post('/login', function (req, res, next) {
 });
 //添加用户
 router.post('/addUser', function (req, res, next) {
-    var fluffy = new Users(req.body);
-    fluffy.save(function (err, fluffy) {
+    Users.find({ username: req.body.username }, function (err, results) {
         if (err) throw err;
-        res.json({
-            status: 0,
-            msg: '添加成功'
-        });
+        if (results.length == 0) {
+            var fluffy = new Users(req.body);
+            fluffy.save(function (err, fluffy) {
+                if (err) throw err;
+                res.json({
+                    status: 0,
+                    msg: '添加成功'
+                });
+            });
+        } else {
+            res.json({
+                status: 1,
+                msg: '用户名重复'
+            });
+        }
     });
 });
 //用户详情
