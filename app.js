@@ -11,6 +11,8 @@ var introduce = require('./routes/introduces');
 var interests = require('./routes/interests');
 var tickets = require('./routes/tickets');
 var users = require('./routes/users');
+var shops = require('./routes/shops');
+var tasks = require('./routes/tasks');
 
 
 //创建连接
@@ -44,6 +46,8 @@ app.use('/introduce', introduce);
 app.use('/interests', interests);
 app.use('/tickets', tickets);
 app.use('/users', users);
+app.use('/shops', shops);
+app.use('/tasks', tasks);
 
 //功能------------------------
 
