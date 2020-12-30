@@ -56,4 +56,17 @@ router.post('/findUser', function (req, res, next) {
         }
     });
 });
+/* 修改积分 */
+router.post('/updateScore', function (req, res, next) {
+    req.body.results.score+=req.body.cnt;
+    delete req.body.cnt;
+    Users.update({'_id':req.body._id},req.body.results, function (err, results) {
+        if (err) throw err;
+        res.json({
+          status: 0,
+          msg: '修改成功',
+          score:req.body.results.score
+        });
+    });
+});
 module.exports = router;
